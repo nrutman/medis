@@ -13,7 +13,8 @@
     "electron": "electron .",
     "lint": "xo client/**/*.{js,jsx}",
     "pack": "NODE_ENV=production npm run build -- -p --config webpack.production.config.js && node bin/pack.js",
-    "release": "NODE_ENV=production ./bin/release"
+    "release": "NODE_ENV=production ./bin/release",
+    "package-mac": "node node_modules/electron-packager/cli.js . --overwrite --platform=darwin --arch=x64 --icon=icns/MyIcon.icns --prune=true --out=release-builds"
   },
   "xo": {
     "extends": "xo-react/space",
@@ -63,7 +64,7 @@
     "ssh2": "^0.5.4"
   },
   "devDependencies": {
-    "asar": "^0.8.3",
+    "asar": "^0.14.5",
     "babel-core": "^5.8.25",
     "babel-eslint": "^4.1.6",
     "babel-loader": "^5.3.2",
